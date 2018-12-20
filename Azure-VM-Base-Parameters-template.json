@@ -30,14 +30,14 @@
         }
     },
     "variables": {
-        "windowsOSVersion": "2008-R2-SP1",
+        "windowsOSVersion": "2016-Datacenter",
         "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'sawinvm')]",
         "nicName": "myVMNic",
         "addressPrefix": "10.0.0.0/16",
         "subnetName": "Subnet",
         "subnetPrefix": "10.0.0.0/24",
         "publicIPAddressName": "myPublicIP",
-        "vmName": "VictorVM2",
+        "vmName": "awlaty001",
         "virtualNetworkName": "MyVNET",
         "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]"
     },
@@ -134,7 +134,7 @@
                     "imageReference": {
                         "publisher": "MicrosoftWindowsServer",
                         "offer": "WindowsServer",
-                        "sku": "windowsOSVersion",
+                        "sku": "[variables('windowsOSVersion')]",
                         "version": "latest"
                     },
                     "osDisk": {
